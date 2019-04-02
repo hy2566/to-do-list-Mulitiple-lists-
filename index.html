@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My TO-Do App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- MOUNT POINT -->
+    <app></app>
+
+    <!-- TAGS -->
+    <script src="./tags/app.tag" type="riot/tag"></script>
+		<script src="./tags/todo-realtime.tag" type="riot/tag"></script>
+
+    <!-- LOAD JQuery, Bootstrap, Riot, Firebase -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script>
+      // INITIALIZE FIREBASE
+      var config = {
+        apiKey: "AIzaSyDH4aQwlHPexq7PvVojxJWzTA0udS2SmDk",
+        authDomain: "mstu5013-multilists.firebaseapp.com",
+        databaseURL: "https://mstu5013-multilists.firebaseio.com",
+        projectId: "mstu5013-multilists",
+        storageBucket: "mstu5013-multilists.appspot.com",
+        messagingSenderId: "965158665909"
+      };
+
+
+      firebase.initializeApp(config);
+
+			// Create firestore object (database ref)
+			let database = firebase.firestore();
+
+      // INITIALIZE RIOT
+      var tags = riot.mount('*', {
+				title: "My List"
+			});
+    </script>
+
+  </body>
+</html>
